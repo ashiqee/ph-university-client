@@ -1,34 +1,37 @@
 import React, { createElement } from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, MenuProps, theme } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { Outlet,NavLink } from 'react-router-dom';
+import { adminSidebarItems } from '../../routes/admin.routes';
+
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items:MenuProps['items'] = [
-    {
-        key:'1',
-        label:'Dashboard',
-    },
-    {
-        key:'2',
-        label:'Profile',
-    },
-    {
-        key:'3',
-        label:'User Management',
-        children:[
-            {
-                key:'4',
-                label:'create admin'
-            },
-            {
-                key:'5',
-                label:'create student'
-            },
-        ]
-    },
-]
+// const items:MenuProps['items'] = [
+//     {
+//         key:'Dashboard',
+//         label: <NavLink to='/admin/dashboard'>Dashboard</NavLink>,
+//     },
+//       {
+//         key:'User Management',
+//         label:'User Management',
+//         children:[
+//             {
+//                 key:'create admin',
+//                 label:<NavLink to='/admin/create-admin'>create admin</NavLink>
+//             },
+//             {
+//                 key:'create faculty',
+//                 label:<NavLink to='/admin/create-faculty'>create faculty</NavLink>
+//             },
+//             {
+//                 key:'create student',
+//                 label:<NavLink to='/admin/create-student'>create student</NavLink>
+//             },
+           
+//         ]
+//     },
+// ]
 
 
 const MainLayout = () => {
@@ -50,7 +53,7 @@ const MainLayout = () => {
             alignItems:'center'}}>
             <h1 >PH Uni</h1>
           </div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebarItems} />
         </Sider>
         <Layout>
           <Header style={{ padding: 0,  }} />
