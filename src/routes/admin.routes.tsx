@@ -8,16 +8,6 @@ import { NavLink } from 'react-router-dom';
 
 
 
-type TRoute = {
-    path:string,
-    element:ReactNode
-}
-
-type TSidebarItem ={
-    key:string;
-     label:string;
-    children?:TSidebarItem[];
-}
 
 export const adminPaths=[
     {name:'Dashboard',path:'dashboard',element:<AdminDashboard/>},
@@ -36,46 +26,44 @@ export const adminPaths=[
 
 
 
- const adminRoutes=adminPaths.reduce((acc :TRoute[],cur)=>{
-    if(cur.path && cur.element){
-        acc.push({
-            path:cur.path,
-            element:cur.element,
-        });
-    }
-    if(cur.children){
-        cur.children.forEach((child)=>{
-            acc.push({path:child.path,element:child.element});
-        })
-    }
-    return acc
- },[] )
+//  const adminRoutes=adminPaths.reduce((acc :TRoute[],cur)=>{
+//     if(cur.path && cur.element){
+//         acc.push({
+//             path:cur.path,
+//             element:cur.element,
+//         });
+//     }
+//     if(cur.children){
+//         cur.children.forEach((child)=>{
+//             acc.push({path:child.path,element:child.element});
+//         })
+//     }
+//     return acc
+//  },[] )
 
- export const adminSidebarItems=adminPaths.reduce((acc :TSidebarItem[],cur)=>{
-    if(cur.path && cur.name){
-        acc.push({
-            key:cur.name,
-            label: <NavLink to={`/admin/${cur.path}`}>{cur.name}</NavLink>,
-        });
-    }
-    if(cur.children){
-        acc.push({
-            key:cur.name, 
-            label:cur.name,
-            children:  cur.children.map((child)=>({
-                    key:child.name,
-                    label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>
-                  }))
+//  export const adminSidebarItems=adminPaths.reduce((acc :TSidebarItem[],cur)=>{
+//     if(cur.path && cur.name){
+//         acc.push({
+//             key:cur.name,
+//             label: <NavLink to={`/admin/${cur.path}`}>{cur.name}</NavLink>,
+//         });
+//     }
+//     if(cur.children){
+//         acc.push({
+//             key:cur.name, 
+//             label:cur.name,
+//             children:  cur.children.map((child)=>({
+//                     key:child.name,
+//                     label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>
+//                   }))
         
-        })
+//         })
       
-    }
-    return acc
- },[] )
+//     }
+//     return acc
+//  },[] )
 
 
-
- export default adminRoutes
 
 //Hard code way
  // export const adminPaths= [
