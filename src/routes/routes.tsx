@@ -6,6 +6,8 @@ import Login from "../pages/Login";
 
 import  { adminPaths } from "./admin.routes";
 import { routeGenarator } from "../utils/routesGenerator";
+import { facultyPaths } from "./faculty.routes";
+import { studentPaths } from "./student.routes";
 
 
 const router = createBrowserRouter([
@@ -18,16 +20,16 @@ const router = createBrowserRouter([
         element:<App/>,
         children:routeGenarator(adminPaths),
     },
-    // {
-    //     path:'/faculty',
-    //     element:<App/>,
-    //     children:adminPaths,
-    // },
-    // {
-    //     path:'/student',
-    //     element:<App/>,
-    //     children:adminPaths,
-    // },
+    {
+        path:'/faculty',
+        element:<App/>,
+        children:routeGenarator(facultyPaths),
+    },
+    {
+        path:'/student',
+        element:<App/>,
+        children:routeGenarator(studentPaths),
+    },
   
     {
         path:'/register',
