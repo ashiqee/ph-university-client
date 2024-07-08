@@ -2,26 +2,27 @@
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "target": "ES2020",                           // Target the ECMAScript 2020 version
+    "useDefineForClassFields": true,              // Use `define` for class fields instead of `assign`
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],     // Include ECMAScript 2020 and DOM libraries
+    "module": "ESNext",                           // Use ECMAScript modules
+    "skipLibCheck": true,                         // Skip type checking of declaration files
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "moduleResolution": "bundler",                // Use bundler module resolution
+    "allowImportingTsExtensions": true,           // Allow importing TypeScript files with extensions
+    "resolveJsonModule": true,                    // Allow importing JSON modules
+    "isolatedModules": true,                      // Ensure each file is treated as a separate module
+    "moduleDetection": "force",                   // Force module detection
+    "noEmit": true,                               // Do not emit output files
+    "jsx": "react-jsx",                           // Use React 17's new JSX transform
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "strict": true,                               // Enable strict type-checking options
+    "noUnusedLocals": true,                       // Report errors on unused locals
+    "noUnusedParameters": true,                   // Report errors on unused parameters
+    "noFallthroughCasesInSwitch": true            // Report errors on fallthrough cases in switch statements
   },
-  "include": ["src"]
+  "include": ["src"],                             // Include files in the src directory
+  "exclude": ["node_modules", "dist"]             // Exclude node_modules and dist directories
 }
